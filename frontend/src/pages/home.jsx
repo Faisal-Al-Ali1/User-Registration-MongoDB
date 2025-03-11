@@ -24,7 +24,7 @@ const Home = () => {
 
   const handleLogout = async () => {
     try {
-      
+
       await axios.post(
         "http://localhost:8000/auth/logout",
         {},
@@ -46,6 +46,18 @@ const Home = () => {
 
         {isAuthenticated ? (
           <>
+            <button
+              onClick={() => navigate("/order")}
+              className="w-full py-3 mb-3 bg-yellow-600 text-white font-semibold rounded-md hover:bg-yellow-700 transition duration-300"
+            >
+              Order Now
+            </button>
+            <button
+              onClick={() => navigate("/orders")}
+              className="w-full py-3 mb-3 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition duration-300"
+            >
+              View Orders
+            </button>
             <button
               onClick={() => navigate("/profile")}
               className="w-full py-3 mb-3 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition duration-300"
